@@ -1,0 +1,66 @@
+[
+  {
+    "name": "Zensure",
+    "bookingCompany": "KEEG",
+    "rating": 0.1,
+    "price": 476.63,
+    "city": "Brasília",
+    "img": "https://raw.githubusercontent.com/gabeabreu/images/main/Frame%203aaa.png"
+  },
+  {
+    "name": "Quordate",
+    "bookingCompany": "TURNLING",
+    "rating": 3.3,
+    "price": 485.56,
+    "city": "Brasília",
+    "img": "https://raw.githubusercontent.com/gabeabreu/images/main/Frame%204aaa.png"
+  },
+  {
+    "name": "Netplode",
+    "bookingCompany": "MAGNINA",
+    "rating": 1.7,
+    "price": 198.16,
+    "city": "Brasília",
+    "img": "https://raw.githubusercontent.com/gabeabreu/images/main/Frame%205aaa.png"
+  },
+  {
+    "name": "Zappix",
+    "bookingCompany": "ADORNICA",
+    "rating": 2.9,
+    "price": 462.87,
+    "city": "Brasília",
+    "img": "https://raw.githubusercontent.com/gabeabreu/images/main/Frame%206aaa.png"
+  },
+  {
+    "name": "Zentime",
+    "bookingCompany": "NETBOOK",
+    "rating": 3.5,
+    "price": 348.67,
+    "city": "Brasília",
+    "img": "https://raw.githubusercontent.com/gabeabreu/images/main/Frame%207aaa.png"
+  },
+  {
+    "name": "Terascape",
+    "bookingCompany": "SULTRAXIN",
+    "rating": 4.3,
+    "price": 396.53,
+    "city": "Brasília",
+    "img": "https://raw.githubusercontent.com/gabeabreu/images/main/Frame%208aaa.png"
+  },
+  {
+    "name": "Zidox",
+    "bookingCompany": "MAINELAND",
+    "rating": 3.5,
+    "price": 449.95,
+    "city": "Brasília",
+    "img": "https://raw.githubusercontent.com/gabeabreu/images/main/Frame%203aaa.png"
+  },
+  {
+    "name": "Malathion",
+    "bookingCompany": "DIGIRANG",
+    "rating": 3.9,
+    "price": 192.96,
+    "city": "Brasília",
+    "img": "https://raw.githubusercontent.com/gabeabreu/images/main/Frame%204aaa.png"
+  }
+]
