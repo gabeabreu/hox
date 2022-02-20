@@ -1,0 +1,19 @@
+{
+  "short_name": "hox",
+  "name": "hox hotel booking",
+  "description": "It's a hotel booking app",
+  "icons": [
+    {
+      "src": "logo.png",
+      "type": "image/png",
+      "sizes": "144x144"
+    }
+  ],
+  "dir": "ltr",
+  "lang": "en",
+  "start_url": "../index.html",
+  "orientation": "portrait",
+  "display": "standalone",
+  "theme_color": "#ec2450",
+  "background_color": "#fafafa"
+}
