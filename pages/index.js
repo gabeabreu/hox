@@ -1,4 +1,3 @@
-import Head from "next/head";
 import Banner from "../components/Banner";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
@@ -9,11 +8,6 @@ import SmallCard from "../components/SmallCard";
 export default function Home({ hotels, nearby, filters }) {
   return (
     <div className="bg-secondary">
-      <Head>
-        <title>hox</title>
-        <meta name="description" content="hox hotel booking" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <Header />
       <Banner />
       <main className="max-w-7xl mx-auto px-8 sm:px-16">
