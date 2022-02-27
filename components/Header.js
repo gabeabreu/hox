@@ -44,6 +44,7 @@ export default function Header({ placeholder }) {
         guestsNumber,
       },
     });
+    setSearchState(""); //to hide date picker
   }
 
   return (
@@ -67,6 +68,7 @@ export default function Header({ placeholder }) {
         {/* middle */}
         <div className="flex items-center md:border-0 rounded-full py-2 md:shadow-inner">
           <input
+            data-cy="searchBar"
             value={searchState}
             onChange={(e) => setSearchState(e.target.value)}
             type="text"
@@ -87,7 +89,10 @@ export default function Header({ placeholder }) {
 
         {/* date picker */}
         {searchState && (
-          <div className="flex flex-col col-span-3 mx-auto mt-10">
+          <div
+            className="flex flex-col col-span-3 mx-auto mt-10"
+            data-cy="datePicker"
+          >
             <DateRangePicker
               ranges={[selectionRange]}
               minDate={new Date()}
@@ -102,6 +107,7 @@ export default function Header({ placeholder }) {
 
               <UsersIcon className="h-5" />
               <input
+                data-cy="guestsNumber"
                 type="number"
                 min={1}
                 value={guestsNumber}
@@ -117,6 +123,7 @@ export default function Header({ placeholder }) {
                 Cancel
               </button>
               <button
+                data-cy="searchButton"
                 onClick={search}
                 className="flex-grow text-secondary rounded-full h-10 bg-primary"
               >

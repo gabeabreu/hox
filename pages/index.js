@@ -14,7 +14,10 @@ export default function Home({ hotels, nearby, filters }) {
         {/* nearby */}
         <section className="pt-6">
           <h2 className="font-semibold text-3xl pb-5">Next to you</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2  xl:grid-cols-4">
+          <div
+            className="grid grid-cols-1 sm:grid-cols-2  xl:grid-cols-4"
+            data-cy="nearby"
+          >
             {nearby?.map((item) => (
               <SmallCard
                 key={item.name}

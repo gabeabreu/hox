@@ -61,6 +61,9 @@ export default function Search({ matchingHotels }) {
               ))}
           </div>
         </section>
+        <section>
+          <h1 className="text-3xl font-semibold mt-2 mb-6">No hotels found</h1>
+        </section>
       </main>
 
       <Footer />
