@@ -1,6 +1,5 @@
 import { StarIcon } from "@heroicons/react/solid";
 import Image from "next/image";
-import { useRouter } from "next/router";
 
 export default function ResultComponent({
   img,
@@ -11,7 +10,7 @@ export default function ResultComponent({
   price,
 }) {
   return (
-    <div className="py-7 px-2">
+    <div className="py-7 px-2" data-cy="hotel">
       <div className="relative h-24 w-40 md:h-52 md:w-80 flex-shrink-0">
         <Image
           src={img}
