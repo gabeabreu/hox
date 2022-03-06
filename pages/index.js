@@ -5,7 +5,7 @@ import LargeCard from "../components/LargeCard";
 import MediumCard from "../components/MediumCard";
 import SmallCard from "../components/SmallCard";
 
-export default function Home({ hotels, nearby, filters }) {
+export default function Home({ nearby, filters }) {
   return (
     <div className="bg-secondary">
       <Header />
