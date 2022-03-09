@@ -42,7 +42,7 @@ export default function Search({ hotels }: Props) {
         <section className="flex-grow pt-14 px-6">
 
           <h1 className="text-3xl font-semibold mt-2 mb-6">
-            Searching for {searchState}
+            Searching for ci-test {searchState}
           </h1>
 
           <p className="text-xs">
