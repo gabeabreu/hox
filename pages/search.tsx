@@ -1,23 +1,33 @@
+import { GetServerSideProps } from "next";
 import { useRouter } from "next/router";
 import Filter from "../components/Filter";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import { format } from "date-fns";
-import ResultCard from "../components/ResultCard";
 import ResultsRender from "../components/ResultsRender";
 
-export default function Search({ hotels }) {
+type Hotel = {
+  name: string,
+  bookingCompany: string,
+  rating: string,
+  price: number,
+  city: string,
+  img: string
+}
+
+type Props = {
+  hotels: Hotel[]
+}
+
+export default function Search({ hotels }: Props) {
   const router = useRouter();
-  const { searchState, startDate, endDate, guestsNumber } = router.query;
-  const formattedStartDate = format(new Date(startDate), "dd MMMM");
-  const formattedEndDate = format(new Date(endDate), "dd MMMM");
-  const daysRange = `${formattedStartDate} - ${formattedEndDate}`;
+  const { searchState, guestsNumber } = router.query;
+
 
   var matchingHotels = hotels.filter((hotel) => {
     if (searchState == "") return;
     else if (
-      hotel.name.toLowerCase().includes(searchState.toLowerCase()) ||
-      hotel.city.toLowerCase().includes(searchState.toLowerCase())
+      hotel.name.toLowerCase().includes((searchState||'').toString().toLowerCase()) ||
+      hotel.city.toLowerCase().includes((searchState||'').toString().toLowerCase())
     )
       return hotel;
   });
@@ -25,18 +35,19 @@ export default function Search({ hotels }) {
   return (
     <div>
       <Header
-        placeholder={`${searchState} | ${daysRange} | ${guestsNumber} guests`}
+        placeholder={`${searchState} | ${guestsNumber} guests`}
       />
 
       <main>
         <section className="flex-grow pt-14 px-6">
-          <p className="text-xs">
-            {daysRange} for {guestsNumber} guests.
-          </p>
 
           <h1 className="text-3xl font-semibold mt-2 mb-6">
             Searching for {searchState}
           </h1>
+
+          <p className="text-xs">
+            for {guestsNumber} guests.
+          </p>
 
           <div className="hidden md:inline-flex m-5 space-x-3 text-soft whitespace-nowrap">
             <Filter text={"Pet friendly"} />
@@ -55,7 +66,7 @@ export default function Search({ hotels }) {
   );
 }
 
-export async function getServerSideProps() {
+export const getServerSideProps: GetServerSideProps = async () => {
   const hotels = require("../public/hotelList.json");
 
   return {

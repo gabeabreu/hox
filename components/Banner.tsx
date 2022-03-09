@@ -1,4 +1,3 @@
-import { SearchIcon } from "@heroicons/react/solid";
 import Image from "next/image";
 
 export default function Banner() {

@@ -14,14 +14,16 @@ export default function Result() {
       <Header />
 
       <main className="max-w-7xl mx-auto px-8 sm:px-16">
+        {img && city && name && bookingCompany && rating && price ? 
         <ResultComponent
-          img={img}
-          city={city}
-          name={name}
-          bookingCompany={bookingCompany}
-          rating={rating}
-          price={price}
-        />
+          img={String(img)}
+          city={String(city)}
+          name={String(name)}
+          bookingCompany={String(bookingCompany)}
+          rating={String(rating)}
+          price={Number(price)}
+        /> : null}
+        {console.log(router.query)}
         <LargeCard
           img="https://raw.githubusercontent.com/gabeabreu/images/main/Frame%2017secndBannerClean.jpg"
           title="The right place in the right moment."

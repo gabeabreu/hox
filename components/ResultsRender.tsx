@@ -1,6 +1,19 @@
 import ResultCard from "./ResultCard";
 
-export default function ResultsRender({ matchingHotels }) {
+type Hotel = {
+  name: string,
+  bookingCompany: string,
+  rating: string,
+  price: number,
+  city: string,
+  img: string
+}
+
+type Props = {
+  matchingHotels: Hotel[]
+}
+
+export default function ResultsRender({ matchingHotels }: Props) {
   if (matchingHotels.length != 0)
     return (
       <div data-cy="results" className="flex flex-col">

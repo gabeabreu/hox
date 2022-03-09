@@ -5,30 +5,21 @@ import {
   UserCircleIcon,
   MenuIcon,
 } from "@heroicons/react/solid";
-import { useState } from "react";
+import React, { useState } from "react";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
-import { DateRangePicker } from "react-date-range";
 import { useRouter } from "next/router";
 import CommonHead from "./CommonHeader";
 
-export default function Header({ placeholder }) {
-  const [searchState, setSearchState] = useState("");
-  const [startDate, setStartDate] = useState(new Date());
-  const [endDate, setEndDate] = useState(new Date());
-  const [guestsNumber, setGuestsNumber] = useState(1);
+type Props = {
+  placeholder?: string
+}
+
+export default function Header({placeholder}: Props) {
+  const [searchState, setSearchState] = useState<string>("");
+  const [guestsNumber, setGuestsNumber] = useState<number>(1);
+
   const router = useRouter();
-
-  const selectionRange = {
-    startDate: startDate,
-    endDate: endDate,
-    key: "selection",
-  };
-
-  function handleSelect(ranges) {
-    setStartDate(ranges.selection.startDate);
-    setEndDate(ranges.selection.endDate);
-  }
 
   function handleCancelSearch() {
     setSearchState("");
@@ -39,8 +30,6 @@ export default function Header({ placeholder }) {
       pathname: "/search",
       query: {
         searchState: searchState,
-        startDate: startDate.toISOString(),
-        endDate: endDate.toISOString(),
         guestsNumber,
       },
     });
@@ -93,12 +82,6 @@ export default function Header({ placeholder }) {
             className="flex flex-col col-span-3 mx-auto mt-10"
             data-cy="datePicker"
           >
-            <DateRangePicker
-              ranges={[selectionRange]}
-              minDate={new Date()}
-              rangeColors={["#ec2450"]}
-              onChange={handleSelect}
-            />
 
             <div className="flex items-center border-b mb-4">
               <h2 className="text-2xl flex-grow font-semibold">
@@ -111,7 +94,7 @@ export default function Header({ placeholder }) {
                 type="number"
                 min={1}
                 value={guestsNumber}
-                onChange={(e) => setGuestsNumber(e.target.value)}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setGuestsNumber(Number(e.target.value))}
                 className="w-12 pl-2 text-lg outline-none text-primary"
               />
             </div>

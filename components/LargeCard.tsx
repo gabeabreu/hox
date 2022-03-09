@@ -1,6 +1,12 @@
 import Image from "next/image";
 
-export default function LargeCard(props) {
+type Props = {
+  img: string,
+  title: string,
+  text: string,
+}
+
+export default function LargeCard(props: Props) {
   return (
     <div className="relative py-16">
       <div className="relative h-96 min-w-[300px]">
