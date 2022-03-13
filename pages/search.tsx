@@ -35,7 +35,7 @@ export default function Search({ hotels }: Props) {
   return (
     <div>
       <Header
-        placeholder={`${searchState} | testing ci ${guestsNumber} guests`}
+        placeholder={`${searchState} | ${guestsNumber} guests`}
       />
 
       <main>
