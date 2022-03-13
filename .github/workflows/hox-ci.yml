@@ -26,7 +26,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm install
-    - run: npm install typescript -D @types/react @types/node
+    - run: npm install typescript --save-dev @types/react @types/node
     - run: npm run build
     - run: nohup npm run start
     - run: npm run cypress
