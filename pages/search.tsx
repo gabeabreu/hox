@@ -24,7 +24,7 @@ export default function Search({ hotels }: Props) {
 
 
   var matchingHotels = hotels.filter((hotel) => {
-    if (searchState == "") return;
+    if (!searchState) return;
     else if (
       hotel.name.toLowerCase().includes((searchState||'').toString().toLowerCase()) ||
       hotel.city.toLowerCase().includes((searchState||'').toString().toLowerCase())
